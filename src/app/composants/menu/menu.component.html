@@ -1,0 +1,55 @@
+<ul>
+  <li>
+    <a
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Accueil
+    </a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="cours/stagiaire"> Stagiaire </a>
+  </li>
+  <li routerLinkActive="active">
+    <a routerLink="cours/adresse"> Adresse </a>
+  </li>
+  <li routerLinkActive="active">
+    <a [routerLink]='["cours/tableau", 0]'> Tableau </a>
+  </li>
+   <li routerLinkActive="active">
+    <a [routerLink]='["cours/formulaire"]'> Formulaire </a>
+  </li>
+  <li routerLinkActive="active">
+    <a [routerLink]='["cours/form"]'> Form </a>
+  </li>
+  <li routerLinkActive="active">
+    <a [routerLink]='["cours/form2"]'> Form2 </a>
+  </li>
+   <li routerLinkActive="active">
+    <a [routerLink]='["cours/pere"]'> Pere/fils </a>
+  </li>
+   <li routerLinkActive="active">
+    <a [routerLink]='["cours/panier"]'> Panier </a>
+  </li>
+   <li routerLinkActive="active">
+    <a [routerLink]='["cours/observable"]'> messagerie </a>
+  </li>
+  <li routerLinkActive="active">
+    <a [routerLink]='["cours/father"]'> Chat </a>
+  </li>
+  
+
+  <li>
+    <a
+      [routerLink]="['cours/adresse']"
+      [queryParams]="{
+        ville: 'Marseille',
+        codepostal: '13000',
+        rue: 'paradis'
+      }"
+    >
+      Adresse
+    </a>
+  </li>
+</ul>

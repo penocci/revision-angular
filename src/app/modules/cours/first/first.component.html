@@ -1,0 +1,13 @@
+<h4>Envoyer à second</h4>
+<div>
+Message : <input type=text [(ngModel)]="msgS" />
+<button (click)="ajouterMessageS()">Ajouter message
+</button>
+</div>
+
+<h4>Reçu de second</h4>
+<ul>
+<li *ngFor="let message of messagesF">
+{{ message }}
+</li>
+</ul>

@@ -1,0 +1,36 @@
+<h2>Formulaire réactif</h2>
+<form #monForm="ngForm" (submit)="afficherTout()" [formGroup]="personneForm">
+  <div>
+    Identifiant :
+    <input type="number" formControlName="id" />
+  </div>
+  <div>
+    Nom :
+    <input type="text" formControlName="nom" autocomplete="on" />
+  </div>
+  <div>
+    Prénom :
+    <input type="text" formControlName="prenom" autocomplete="on" />
+  </div>
+  <div formGroupName="adresse">
+    <div>
+      Rue :
+      <input type="text" formControlName="rue" />
+    </div>
+    <div>
+      Code Postal :
+      <input type="text" formControlName="codePostal" />
+    </div>
+    <div>
+      Ville :
+      <input type="text" formControlName="ville" />
+    </div>
+  </div>
+  <button [disabled]="!monForm.valid">Cliquer</button>
+</form>
+<ul>
+  <li *ngFor="let item of persTab; index as i">
+    Inscrit {{ i }} :{{ item.id }} {{ item.nom }} {{ item.prenom }}<br />
+    {{ item.adresse.rue }} {{ item.adresse.codePostal }} {{ item.adresse.ville }}
+  </li>
+</ul>

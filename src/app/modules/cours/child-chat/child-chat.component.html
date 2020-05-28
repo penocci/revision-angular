@@ -1,0 +1,11 @@
+<div class="chat">
+<h6> {{ nom }} </h6>
+<input type=text name=mssg [(ngModel)]=mssg>
+<button (click)="envoyer()" [disabled]="buttonStatus"> Envoi</button>
+<h3>Messages</h3>
+<ul>
+    <li *ngFor="let element of messages">
+        {{ element.nom }} : {{ element.message }}
+    </li>
+</ul>
+</div>

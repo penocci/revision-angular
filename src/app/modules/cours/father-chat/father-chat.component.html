@@ -1,0 +1,9 @@
+Nom : <input type="text" [(ngModel)]="nom" />
+<button type="button" (click)="ajouterParticipant()">
+  Ajouter Tchatter
+</button>
+<h3>Participants</h3>
+<div id="container">
+  <app-child-chat *ngFor="let name of participants" [nom]="name">
+  </app-child-chat>
+</div>

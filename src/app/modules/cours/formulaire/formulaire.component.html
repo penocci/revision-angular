@@ -1,0 +1,39 @@
+<h2>Formulaire</h2>
+<form #monForm="ngForm">
+  <div>
+    Nom :
+    <input
+      type="text"
+      name="nom"
+      [(ngModel)]="personne.nom"
+      required
+      #nom="ngModel"
+    />
+  </div>
+  <div [hidden]="nom.valid || nom.pristine">
+    Le nom est obligatoire
+  </div>
+  <div>
+    Prénom :
+    <input
+      type="text"
+      name="prenom"
+      [(ngModel)]="personne.prenom"
+      required
+      #prenom="ngModel"
+    />
+  </div>
+  <div [hidden]="prenom.valid || prenom.pristine">
+    Le prénom est obligatoire
+  </div>
+  <div>
+    <button (click)="ajouter()" [disabled]="!monForm.valid">
+      ajouter
+    </button>
+  </div>
+</form>
+<ul>
+  <li *ngFor="let item of tabPers; index as i">
+    Inscrit {{ i }} : {{ item.nom }} {{ item.prenom }}
+  </li>
+</ul>

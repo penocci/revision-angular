@@ -1,0 +1,19 @@
+<p>Father name</p>
+
+<form #leForm="ngForm" (submit)="ajouter()" [formGroup]="filsForm">
+  <div>
+    Nom :
+    <input type="text" formControlName="nom" />
+  </div>
+  <div>
+    Prenom :
+    <input type="text" formControlName="prenom" />
+  </div>
+  <button [disabled]="!leForm.valid">Ajouter</button>
+</form>
+
+<ng-container *ngFor="let fils of filsS; index as i">
+  <app-fils [name]="fils.nom">
+    {{ fils.prenom }}
+  </app-fils>
+</ng-container>

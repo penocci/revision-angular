@@ -1,0 +1,12 @@
+<h4>Envoyer à first</h4>
+<div>
+Message : <input type=text [(ngModel)]="msgF" />
+<button (click)="ajouterMessageF()">Ajouter message
+</button>
+</div>
+<h4>Reçu de first</h4>
+<ul>
+<li *ngFor="let messages of messagesS">
+{{ messages }}
+</li>
+</ul>

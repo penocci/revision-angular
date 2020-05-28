@@ -1,0 +1,19 @@
+<h4>Votre texte dans votre couleur</h4>
+<form #leForm="ngForm" (submit)="colorer()" [formGroup]="couleurForm">
+  <div>
+    Texte :
+    <input type="text" formControlName="texte" />
+  </div>
+  <div>
+    Couleur :
+    <input type="text" formControlName="couleur" />
+  </div>
+  <button [disabled]="!leForm.valid">Colorer</button>
+</form>
+<ng-container *ngFor="let couleur of couleurTexte; index as i">
+    <div >
+  <app-item [couleur]="couleur.couleur" [style.color]="couleur.couleur" >{{
+    couleur.texte
+  }}</app-item>
+  </div>
+</ng-container>

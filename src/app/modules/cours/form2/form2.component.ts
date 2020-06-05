@@ -46,4 +46,3 @@ export class Form2Component implements OnInit {
     );
   }
 }
-

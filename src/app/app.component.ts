@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Personne } from './interfaces/personne';
 import { ɵangular_packages_platform_browser_platform_browser_a } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { ɵangular_packages_platform_browser_platform_browser_a } from '@angular
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  
+  constructor(private router: Router) {}
+  username:string; 
   title = 'revisionAngular';
   nom = 'babas';
   tab = [-8, 89, 0, 5];
@@ -23,4 +25,12 @@ export class AppComponent {
     { nom: 'travolta', prenom: 'mike', id: 7 },
     { nom: 'dalton', prenom: 'jack', id: 89789725 },
   ];
+  getToken() {
+    return localStorage.getItem('token') != null ? true : false;
+
+  }
+  deconnexion() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 }

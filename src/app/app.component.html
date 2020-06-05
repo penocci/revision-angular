@@ -1,7 +1,17 @@
-<h1>Bonjour {{ nom }}</h1>
-<app-menu></app-menu>
-<router-outlet></router-outlet>
+<ng-container *ngIf="getToken()==true">
 
+  
+
+</ng-container>
+
+<ng-container *ngIf="getToken()==true">
+
+  <button (click)=deconnexion()>Deconnexion</button>
+  <app-menu></app-menu>
+
+</ng-container>
+
+<router-outlet></router-outlet>
 
 <!-- <p [textContent]="title"></p>
 <ul>

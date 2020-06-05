@@ -22,4 +22,5 @@ export class AdresseComponent implements OnInit {
     this.rue = this.route.snapshot.queryParams.rue;
     this.codePostal = this.route.snapshot.queryParams.codepostal;
   }
+  
 }

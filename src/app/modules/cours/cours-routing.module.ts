@@ -14,6 +14,8 @@ import { PanierComponent } from './panier/panier.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { FatherChatComponent } from './father-chat/father-chat.component';
+import { PersonneComponent } from './personne/personne.component';
+import { EditPersonneComponent } from './edit-personne/edit-personne.component';
 
 const routes: Routes = [
   { path: 'tableau/:id', component: TableauComponent },
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'first', component: FirstComponent },
   { path: 'second', component: SecondComponent },
   { path: 'father', component: FatherChatComponent },
+  { path: 'personne', component: PersonneComponent },
+  { path: 'editpersonne/:id', component: EditPersonneComponent },
 ];
 
 @NgModule({

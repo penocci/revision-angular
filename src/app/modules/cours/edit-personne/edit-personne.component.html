@@ -1,0 +1,39 @@
+<h2>Modifier la personne</h2>
+<form
+  #monForm="ngForm"
+  (submit)="modifierPersonne()"
+  [formGroup]="personneForm"
+>
+  <div>
+    Nom :
+    <input type="text" formControlName="nom" />
+  </div>
+  <div>
+    Prénom :
+    <input type="text" formControlName="prenom" />
+  </div>
+  <div formArrayName="adresses">
+    <h3>Adresses</h3>
+    <button type="button" (click)="ajouterAdresse()">
+      Ajouter adresse
+    </button>
+    <div *ngFor="let adresse of adresses.controls; let i = index">
+      <div [formGroupName]="i">
+        <div>
+          Rue :
+          <input type="text" formControlName="rue" />
+        </div>
+        <div>
+          Code postal :
+          <input type="text" formControlName="codePostal" />
+        </div>
+        <div>
+          Ville :
+          <input type="text" formControlName="ville" />
+        </div>
+        <button type="button" (click)="supprimerAdresse(i)">Effacer</button>
+      </div>
+    </div>
+  </div>
+  <button [disabled]="!monForm.valid">cliquer</button>
+</form>

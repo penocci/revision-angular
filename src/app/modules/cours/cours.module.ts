@@ -23,6 +23,9 @@ import { SecondComponent } from './second/second.component';
 import { FatherChatComponent } from './father-chat/father-chat.component';
 import { ChildChatComponent } from './child-chat/child-chat.component';
 import { PersonneComponent } from './personne/personne.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { EditPersonneComponent } from './edit-personne/edit-personne.component';
+import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 
 
 @NgModule({
@@ -40,9 +43,24 @@ import { PersonneComponent } from './personne/personne.component';
     ItemComponent,
     ParentComponent,
     ChildComponent,
-    PanierComponent, 
-    ArticleComponent, FirstComponent, SecondComponent, FatherChatComponent, ChildChatComponent, PersonneComponent
+    PanierComponent,
+    ArticleComponent,
+    FirstComponent,
+    SecondComponent,
+    FatherChatComponent,
+    ChildChatComponent,
+    PersonneComponent,
+    EditPersonneComponent,
   ],
-  imports: [CommonModule, CoursRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    CoursRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
 })
 export class CoursModule {}
